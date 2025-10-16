@@ -1,0 +1,321 @@
+/* Coordinator List Container */
+.cood-list-container {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  min-height: 100vh;
+  padding: 2rem;
+}
+
+/* Coordinators Grid */
+.coordinators-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+/* Coordinator Card */
+.coordinator-card {
+  background: white;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  animation: fadeInUp 0.5s ease;
+}
+
+.coordinator-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.coord-card-header {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 2rem;
+  text-align: center;
+  position: relative;
+}
+
+.coord-avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 5px solid white;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  margin-bottom: 1rem;
+}
+
+.coord-card-header .status-badge {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+}
+
+.coord-card-body {
+  padding: 1.5rem;
+}
+
+.coord-name {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 0.5rem;
+  text-align: center;
+}
+
+.coord-role {
+  font-size: 1rem;
+  color: #667eea;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.coord-id,
+.coord-dept,
+.coord-detail {
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 0.75rem;
+  display: flex;
+  align-items: center;
+}
+
+.coord-id i,
+.coord-dept i,
+.coord-detail i {
+  color: #667eea;
+  width: 20px;
+}
+
+/* Programs Section */
+.programs-section {
+  background: #f8f9fa;
+  padding: 1rem;
+  border-radius: 12px;
+  margin: 1.5rem 0;
+}
+
+.programs-section h4 {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.program-badge {
+  display: inline-block;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 0.4rem 0.8rem;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin: 0.25rem;
+}
+
+/* Coordinator Stats */
+.coord-stats {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 2px solid #f0f0f0;
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.stat-item i {
+  font-size: 1.5rem;
+  color: #667eea;
+}
+
+.stat-item span {
+  font-size: 0.85rem;
+  color: #666;
+  font-weight: 600;
+}
+
+.coord-card-footer {
+  padding: 1rem 1.5rem;
+  background: #f8f9fa;
+  display: flex;
+  justify-content: center;
+  gap: 0.75rem;
+}
+
+/* Action Buttons */
+.btn-action {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-view {
+  background: rgba(74, 172, 254, 0.15);
+  color: #4facfe;
+}
+
+.btn-view:hover {
+  background: #4facfe;
+  color: white;
+  transform: translateY(-2px);
+}
+
+.btn-edit {
+  background: rgba(240, 147, 251, 0.15);
+  color: #f093fb;
+}
+
+.btn-edit:hover {
+  background: #f093fb;
+  color: white;
+  transform: translateY(-2px);
+}
+
+.btn-delete {
+  background: rgba(250, 112, 154, 0.15);
+  color: #fa709a;
+}
+
+.btn-delete:hover {
+  background: #fa709a;
+  color: white;
+  transform: translateY(-2px);
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+  .cood-list-container {
+    padding: 1.5rem;
+  }
+
+  .coordinators-grid {
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .cood-list-container {
+    padding: 1rem;
+  }
+
+  .coordinators-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .coord-avatar {
+    width: 100px;
+    height: 100px;
+  }
+
+  .coord-card-header {
+    padding: 1.5rem;
+  }
+
+  .coord-name {
+    font-size: 1.2rem;
+  }
+
+  .coord-stats {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .stat-item {
+    flex-direction: row;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 576px) {
+  .programs-section {
+    padding: 0.75rem;
+  }
+
+  .program-badge {
+    font-size: 0.75rem;
+    padding: 0.3rem 0.6rem;
+  }
+}
+
+
+/* coodinatorAdd */
+/* Coordinator Add Container */
+.cood-add-container {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  min-height: 100vh;
+  padding: 2rem;
+}
+
+/* Form Hint */
+.form-hint {
+  display: block;
+  color: #999;
+  font-size: 0.85rem;
+  margin-top: 0.5rem;
+}
+
+/* Selected Programs Box */
+.selected-programs-box {
+  background: #f8f9fa;
+  padding: 1rem;
+  border-radius: 10px;
+  margin-top: 1rem;
+}
+
+.selected-programs-box strong {
+  display: block;
+  color: #333;
+  margin-bottom: 0.75rem;
+  font-size: 0.9rem;
+}
+
+.selected-programs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.program-tag {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+/* Info Card */
+.info-card {
+  background: white;
+  border-radius: 20px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+}

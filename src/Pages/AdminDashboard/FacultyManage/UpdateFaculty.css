@@ -1,0 +1,36 @@
+/* Prevent table cells from squeezing inputs too much */
+table td {
+  vertical-align: middle;
+}
+
+/* Keep inputs readable and prevent text overflow inside them */
+table input.form-control,
+table select.form-select {
+  min-width: 250px; /* keeps minimum width always visible */
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis; /* optional: shows "..." if text too long */
+  white-space: nowrap;
+}
+
+/* On smaller screens, allow horizontal scroll instead of shrinking */
+.table-responsive {
+  overflow-x: auto;
+}
+
+/* Make table look nice on all devices */
+@media (max-width: 768px) {
+  table input.form-control,
+  table select.form-select {
+    min-width: 200px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 576px) {
+  table input.form-control,
+  table select.form-select {
+    min-width: 180px;
+    font-size: 13px;
+  }
+}
